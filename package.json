@@ -1,0 +1,28 @@
+{
+  "name": "hapi-posthtml",
+  "version": "0.0.1",
+  "description": "PostHTML View Engine for Koa",
+  "main": "index.js",
+  "dependencies": {
+    "posthtml": "^0.8.2"
+  },
+  "keywords": [
+    "HTML",
+    "PostHTML",
+    "Hapi",
+    "View Engine"
+  ],
+  "author": {
+    "name": "Michael Ciniawsky",
+    "email": "<michael.ciniawsky@gmail.com>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-ciniawsky/hapi-posthtml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michael-ciniawsky/hapi-posthtml/issues"
+  },
+  "homepage": "https://github.com/michael-ciniawsky/hapi-posthtml#readme",
+  "license": "MIT"
+}
