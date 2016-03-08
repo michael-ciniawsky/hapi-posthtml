@@ -7,8 +7,7 @@
 const posthtml = require('posthtml')
 
 module.exports = {
-  compile: (template, options) => {
-    console.log(options)
+  compile: (html, options, next) => {
     let plugins
 
     if (!options.plugins) {
@@ -17,9 +16,27 @@ module.exports = {
       plugins = options.plugins
     }
 
+    let async = (typeof next === 'function')
+
+    if (async) {
+      if (options.plugins) {
+        plugins.concat(options.plugins)
+      }
+
+      return next(null, (context, options, next) => {
+        posthtml(plugins)
+          .process(html)
+          .then(result => next(null, result.html))
+      })
+    }
+
     return (context, options) => {
+      if (options.plugins) {
+        plugins.concat(options.plugins)
+      }
+
       return posthtml(plugins)
-        .process(template, {sync: true})
+        .process(html, {sync: true})
         .html
     }
   }

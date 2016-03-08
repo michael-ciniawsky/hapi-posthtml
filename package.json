@@ -1,10 +1,10 @@
 {
   "name": "hapi-posthtml",
-  "version": "0.0.1",
-  "description": "PostHTML View Engine for Koa",
+  "version": "0.8.0",
+  "description": "PostHTML for Hapi",
   "main": "index.js",
   "dependencies": {
-    "posthtml": "^0.8.2"
+    "posthtml": "^0.8.3"
   },
   "keywords": [
     "HTML",

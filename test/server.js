@@ -21,6 +21,7 @@ server.register(require('vision'), err => {
       'html': require('../index.js')
     },
     relativeTo: __dirname,
+    compileMode: 'async',
     compileOptions: {
       plugins: [ require('posthtml-bem')() ]
     }

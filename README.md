@@ -1,17 +1,13 @@
-# Hapi for [PostHTML](https://github.com/posthtml/posthtml)
+# [PostHTML](https://github.com/posthtml/posthtml) for [Hapi](hapijs.com)
 
-View Engine for [Hapi](hapijs.com)
-
-[PostHTML Plugins](https://maltsev.github.io/posthtml-plugins/)
-
-# Install
+## Install
 
 ```bash
 
 (sudo) npm i -S hapi-posthtml
 ```
 
-# Usage
+## Usage
 
 ```js
 'use strict'
@@ -31,14 +27,16 @@ server.register(require('vision'), err => {
   if (err) {
     throw err
   }
-  // Set up views with posthtml
+  // Set up views with PostHTML
   server.views({
     path: 'public/views/',
     engines: {
       'html': require('hapi-posthtml')
     },
     relativeTo: __dirname,
+    compileMode: 'async'
     compileOptions: {
+      // Set PostHTML Plugins
       plugins: [ require('posthtml-bem')() ]
     }
   })
