@@ -3,7 +3,6 @@
 ## Install
 
 ```bash
-
 (sudo) npm i -S hapi-posthtml
 ```
 
@@ -37,7 +36,7 @@ server.register(require('vision'), err => {
     compileMode: 'async'
     compileOptions: {
       // Set PostHTML Plugins
-      plugins: [ require('posthtml-bem')() ]
+      plugins: [/* Plugins */]
     }
   })
 })
@@ -47,13 +46,11 @@ let handlers = {
   root: function (request, reply) {
     reply.view('index')
   },
-
   local: function (request, reply) {
-    reply.view('index')
+    reply.view('index', {plugins: [/* Plugins */]})
   },
-
   extend: function (request, reply) {
-    reply.view('index')
+    reply.view('index', {plugins: [/* Plugins */], extend: true})
   }
 }
 

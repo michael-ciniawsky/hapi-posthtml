@@ -16,7 +16,7 @@ server.register(require('vision'), err => {
   }
 
   server.views({
-    path: 'public/views/',
+    path: 'views',
     engines: {
       'html': require('../index.js')
     },
@@ -35,11 +35,11 @@ let handlers = {
   },
 
   local: function (request, reply) {
-    reply.view('index')
+    reply.view('index', {plugins: [require('posthtml-bem')()]})
   },
 
   extend: function (request, reply) {
-    reply.view('index')
+    reply.view('index', {plugins: [require('posthtml-bem')()], extend: true})
   }
 }
 
