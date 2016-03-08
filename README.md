@@ -1,4 +1,4 @@
-# [PostHTML](https://github.com/posthtml/posthtml) for [Hapi](hapijs.com)
+<img width="200" height="150" title="HapiJS" src="https://worldvectorlogo.com/logos/hapi.svg" /> <img align="right" width="220" height="150" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
 
 ## Install
 

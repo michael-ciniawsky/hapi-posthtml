@@ -1,6 +1,6 @@
 {
   "name": "hapi-posthtml",
-  "version": "0.8.1",
+  "version": "0.8.3",
   "description": "PostHTML for Hapi",
   "main": "index.js",
   "dependencies": {
