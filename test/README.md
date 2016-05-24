@@ -1,8 +1,8 @@
-# PostHTML Hapi Example
+# Hapi PostHTML Example
 ## Install
 
 ```
-$ (sudo) npm i
+$ npm i
 ```
 
 ## Start
