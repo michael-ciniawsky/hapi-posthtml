@@ -1,10 +1,10 @@
 {
   "name": "hapi-posthtml",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "PostHTML for Hapi",
   "main": "index.js",
   "dependencies": {
-    "posthtml": "^0.8.3"
+    "posthtml": "^0.8.7"
   },
   "keywords": [
     "HTML",
@@ -18,11 +18,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michael-ciniawsky/hapi-posthtml.git"
+    "url": "git+https://github.com/posthtml/hapi-posthtml.git"
   },
   "bugs": {
-    "url": "https://github.com/michael-ciniawsky/hapi-posthtml/issues"
+    "url": "https://github.com/posthtml/hapi-posthtml/issues"
   },
-  "homepage": "https://github.com/michael-ciniawsky/hapi-posthtml#readme",
+  "homepage": "https://github.com/posthtml/hapi-posthtml#readme",
   "license": "MIT"
 }
