@@ -16,8 +16,7 @@
 npm i -S hapi-posthtml
 ```
 
-<h2 align="center">Useage</h2>
-
+<h2 align="center">Usage</h2>
 
 ```js
 'use strict'
