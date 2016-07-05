@@ -10,13 +10,14 @@
   <h1>Hapi PostHTML</h1>
 </div>
 
-## Install
+<h2 align="center">Install</h2>
 
 ```bash
 npm i -S hapi-posthtml
 ```
 
-## Usage
+<h2 align="center">Useage</h2>
+
 
 ```js
 'use strict'
@@ -94,7 +95,7 @@ server.start((err) => {
 })
 ```
 
-## LICENSE
+<h2 align="center">LICENSE</h2>
 
 > MIT License (MIT)
 
