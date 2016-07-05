@@ -6,7 +6,7 @@
 
 const posthtml = require('posthtml')
 
-exports = module.exports = {
+module.exports = {
   compile: (html, options, next) => {
     let plugins
 
