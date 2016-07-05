@@ -12,7 +12,7 @@
 ## Install
 
 ```bash
-$ npm i -S hapi-posthtml
+npm i -S hapi-posthtml
 ```
 
 ## Usage
