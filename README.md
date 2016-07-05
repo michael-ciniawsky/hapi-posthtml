@@ -1,12 +1,13 @@
 [![NPM][npm]][npm-url]
-[![Node][node]][node-url]
-[![Dependencies][deps]][deps-url]
-[![DevDependencies][devdeps]][devdeps-url]
+[![Deps][deps]][deps-url]
+[![Tests][travis]][travis-url]
+[![Coverage][cover]][cover-url]
 [![Standard Code Style][style]][style-url]
 
 <div align="center">
-  <img width="150" height="150" title="Hapi" src="https://worldvectorlogo.com/logos/hapi.svg">
-  <img width="200" height="150" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
+  <img width="200" height="150" title="Hapi" src="https://worldvectorlogo.com/logos/hapi.svg" />
+  <img width="220" height="150" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
+  <h1>Hapi PostHTML</h1>
 </div>
 
 ## Install
@@ -20,50 +21,53 @@ npm i -S hapi-posthtml
 ```js
 'use strict'
 
-const Hapi = require('hapi')
+import Hapi from 'hapi'
+
+import vision from 'vision'
+import posthtml from 'hapi-posthtml'
 
 const server = new Hapi.Server()
 
-// Create a server with host and port
+// Create server
 server.connection({
   host: 'localhost',
   port: 3000
 })
 
-// Register vision for view support
-server.register(require('vision'), err => {
+// Vision for view support
+server.register(vision, err => {
   if (err) {
     throw err
   }
-  // Setup views with PostHTML
+  // PostHTML
   server.views({
     path: 'public/views/',
     engines: {
-      'html': require('hapi-posthtml')
+      'html': posthtml
     },
     relativeTo: __dirname,
     compileMode: 'async'
     compileOptions: {
-      // Set PostHTML Plugins
+      // PostHTML Plugins
       plugins: [/* Plugins */]
     }
   })
 })
 
 // Create route handlers
-let handlers = {
+const handlers = {
   root: function (request, reply) {
     reply.view('index')
   },
   local: function (request, reply) {
-    reply.view('index', {plugins: [/* Plugins */]})
+    reply.view('index', { plugins: [/* Plugins */] })
   },
   extend: function (request, reply) {
-    reply.view('index', {plugins: [/* Plugins */], extend: true})
+    reply.view('index', { plugins: [/* Plugins */], extend: true})
   }
 }
 
-// Add the routes
+// Create routes
 server.route({
   method: 'GET',
   path: '/',
@@ -82,7 +86,6 @@ server.route({
   handler: handlers.extend
 })
 
-// Start the server
 server.start((err) => {
   if (err) {
     throw err
@@ -118,14 +121,8 @@ SOFTWARE.
 [npm]: https://img.shields.io/npm/v/hapi-posthtml.svg
 [npm-url]: https://npmjs.com/package/hapi-posthtml
 
-[node]: https://img.shields.io/node/v/gh-badges.svg?maxAge=2592000
-[node-url]: https://nodejs.org
-
 [deps]: https://david-dm.org/posthtml/hapi-posthtml.svg
 [deps-url]: https://david-dm.org/posthtml/hapi-posthtml
-
-[devdeps]: https://david-dm.org/posthtml/hapi-posthtml/dev-status.svg
-[devdeps-url]: https://david-dm.org/posthtml/hapi-posthtml#info=devDependencies
 
 [style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
 [style-url]: http://standardjs.com/
@@ -133,20 +130,5 @@ SOFTWARE.
 [travis]: http://img.shields.io/travis/posthtml/hapi-posthtml.svg
 [travis-url]: https://travis-ci.org/posthtml/hapi-posthtml
 
-[travis-rel]: http://img.shields.io/travis/posthtml/hapi-posthtml.svg?branch=release/1.0.0
-[travis-rel-url]:https://travis-ci.org/posthtml/hapi-posthtml?branch=release/1.0.0
-
-[travis-dev]: http://img.shields.io/travis/posthtml/hapi-posthtml.svg?branch=develop
-[travis-dev-url]: https://travis-ci.org/posthtml/hapi-posthtml?branch=develop
-
 [cover]: https://coveralls.io/repos/github/posthtml/hapi-posthtml/badge.svg?branch=master
 [cover-url]: https://coveralls.io/github/posthtml/hapi-posthtml?branch=master
-
-[cover-rel]: https://coveralls.io/repos/github/posthtml/hapi-posthtml/badge.svg?branch=release/1.0.0
-[cover-rel-url]: https://coveralls.io/github/posthtml/hapi-posthtml?branch=release/1.0.0
-
-[cover-dev]: https://coveralls.io/repos/github/posthtml/hapi-posthtml/badge.svg?branch=develop
-[cover-dev-url]: https://coveralls.io/github/posthtml/hapi-posthtml?branch=develop
-
-[license]: https://img.shields.io/github/license/posthtml/hapi-posthtml.svg
-[license-url]: https://raw.githubusercontent.com/posthtml/hapi-posthtml/master/LICENSE
