@@ -24,7 +24,7 @@ faster to fix it.
 Please refer to a simple code example.
 
 ```bash
-$ git clone https://github.com/<user>/<sample>
+$ git clone https://github.com/<user>/<example>
 ```
 
 ## Environment
@@ -33,4 +33,4 @@ Please provide information about your environment.
 
 | OS           | Node  | npm     | PostHTML |
 |:------------:|:-----:|:-------:|:--------:|
-| OS X 10.11.4 | 6.0.0 | 3.9.0   | 0.8.7    |
+| OS X 10.11.6 | 6.0.0 | 3.9.0   | 0.9.0    |
